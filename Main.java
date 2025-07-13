@@ -1,41 +1,37 @@
-public class Main {
+class Vehicles {
+    String brand;
 
-    // Main method
-    public static void main(String[] args) {
-        // Vehicle test
-        Drived d1 = new Drived();
-        d1.brand = "Audi";
-        d1.model = "RS7";
-        d1.startEngine();
-        d1.displayInfo();
-
-        // Area tests
-        System.out.println("Area of square (5): " + area(5));
-        System.out.println("Area of circle (3.0): " + area(3.0));
-
-        // Sum of even numbers
-        System.out.println("Sum of even numbers: " + sumOfEven(1, 2, 3, 4, 5, 6));
-    }
-
-    // Square area
-    public static int area(int side) {
-        return side * side;
-    }
-
-    // Circle area
-    public static double area(double radius) {
-        return Math.PI * radius * radius;
-    }
-
-    // Sum of even numbers
-    public static int sumOfEven(int... numbers) {
-        int sum = 0;
-        for (int num : numbers) {
-            if (num % 2 == 0) {
-                sum += num;
-            }
-        }
-        return sum;
+    void startEngine() {
+        System.out.println("Engine, Powering Up");
     }
 }
 
+class Drived extends Vehicles {
+    String model;
+
+    void displayInfo() {
+        System.out.println("Brand " + brand);
+        System.out.println("Model " + model);
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        LibraryItem l1 = new LibraryItem("Test", "Georgios", 1997);
+        Book b1= new Book("Test1", "Georgios1", 1998, 112);
+        DVD d1 = new DVD("Test2", "Georgios2", 1999, 100.5);
+
+       l1.displayInfo();
+       b1.displayInfo();
+       d1.displayInfo();
+    }
+}
+
+
+/*
+create a base class vehicles with fields brand and method startEngine() and Create a Drived class car that adds a
+        field model and a Method display info(). Apply inheitance by creating an object of car and calling both
+vehicle and Car Methods
+
+ */
